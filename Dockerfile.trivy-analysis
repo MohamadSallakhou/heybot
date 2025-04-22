@@ -1,7 +1,11 @@
-# Use the already built image as the base
-FROM ghcr.io/mohamadsallakhou/-with-trivy-output:latest
+# Verwende ein korrekt benanntes Base-Image
+FROM ghcr.io/mohamadsallakhou/heybot-with-trivy-output:latest
 
-# Copy the Trivy scan output file into the image
+# Setze Arbeitsverzeichnis
+WORKDIR /app
+
+# Kopiere Trivy-Scan
 COPY trivy_output.json /app/trivy_output.json
 
+# Starte die Anwendung
 CMD ["python", "main.py"]
