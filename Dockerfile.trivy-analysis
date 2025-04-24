@@ -1,11 +1,11 @@
-# Verwende ein korrekt benanntes Base-Image
-FROM ghcr.io/mohamadsallakhou/heybot-with-trivy-output:latest
+    # Verwende ein korrekt benanntes Base-Image
+    FROM ghcr.io/mohamadsallakhou/heybot-with-trivy-output:latest
 
-# Setze Arbeitsverzeichnis
-WORKDIR /app
+    # Setze Arbeitsverzeichnis
+    WORKDIR /app
 
-# Kopiere Trivy-Scan
-COPY trivy_output.json /app/trivy_output.json
+    # Kopiere Trivy-Scan
+    COPY trivy_output.json /app/trivy_output.json
 
-# Starte die Anwendung
-CMD ["python", "main.py"]
+    # Starte die Anwendung
+    CMD ["python", "main.py"]
